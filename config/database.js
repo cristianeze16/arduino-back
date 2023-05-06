@@ -6,7 +6,7 @@ let connection = async () => {
 			useUnifiedTopology: true,
 			useNewUrlParser: true,
 		});
-		console.log('Conectado a MongoDB');
+		console.log(`Conectado a MongoDB en Puerto: ${process.env.PORT} `);
 	} catch (error) {
 		console.log(error.message);
 	}
