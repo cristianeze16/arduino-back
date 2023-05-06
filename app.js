@@ -6,14 +6,6 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 require('./config/database');
 var cors = require('cors');
-const corsOptions = {
-	origin: 'https://io-things-dashboard.vercel.app/',
-	methods: ['GET', 'POST', 'PUT', 'DELETE'],
-};
-
-
-
-
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -30,7 +22,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(cors(corsOptions));
+app.use(cors());
 
 
 app.use('/', indexRouter);
